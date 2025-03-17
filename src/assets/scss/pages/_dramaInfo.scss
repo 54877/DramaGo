@@ -1,0 +1,302 @@
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+@import "../custom-colors";
+@each $color, $value in $custom-colors {
+  .text-#{$color} {
+    color: $value !important;
+  }
+  .bg-#{$color} {
+    background-color: $value !important;
+  }
+}
+.custom-container {
+  padding-top: 64px;
+  padding-bottom: 128px;
+  @media (max-width: 768px) {
+    // 手機板斷點
+    padding-top: 24px;
+    padding-bottom: 56px;
+  }
+}
+
+.poppins-font {
+  font-family: "Poppins", sans-serif;
+}
+
+.tag {
+  height: 29px;
+  padding: 4px 16px;
+  border-radius: 100px;
+  background: $brand-100;
+  color: $brand-400;
+  font-size: 14px;
+  font-weight: 600;
+  &:hover {
+    color: $brand-100;
+    background-color: $brand-400;
+  }
+
+  &.disable {
+    color: $grey-200;
+    background-color: white;
+    border: 1px solid $grey-200;
+  }
+}
+.photos img {
+  width: 280px;
+  height: 208px;
+  border-radius: 10.79px;
+}
+
+.attendent-card {
+  position: relative;
+  background-color: white;
+  width: 136px;
+  height: 146px;
+  border-radius: 16px;
+  padding: 20px 44px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  .decorative-label {
+    position: absolute; // 絕對定位
+    top: -14.5px; // 向上移動一半高度（29px / 2）
+    left: 50%; // 水平居中
+    transform: translateX(-50%); // 調整水平位置
+    width: 49px;
+    height: 29px;
+    padding: 4px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $brand-300;
+    border-radius: 8px;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .card-img {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+  }
+  .card-text {
+    text-align: center;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+  }
+}
+
+.comment-board {
+  background-color: $brand-100;
+  border-radius: 20px;
+
+  .comment-textarea {
+    display: flex;
+    flex-direction: column;
+
+    .input-area {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      @media (max-width: 768px) {
+        flex-direction: column;
+      }
+    }
+
+    .form-floating {
+      flex-grow: 1;
+      position: relative;
+
+      .form-control {
+        border-radius: 20px;
+        min-height: 96px;
+        resize: vertical;
+        @media (max-width: 768px) {
+          min-height: 136px;
+        }
+      }
+      .character-count {
+        position: absolute;
+        bottom: 12px;
+        right: 20px;
+        font-family: Poppins;
+        color: $grey-400;
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+.message {
+  &.d-flex {
+    @media (min-width: 768px) {
+      gap: 12px;
+    }
+  }
+
+  .message-content-wrapper {
+    flex: 1;
+  }
+}
+
+.message-header {
+  font-weight: 600;
+  font-size: 14px;
+  color: $brand-950;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.message-content {
+  padding: 8px 20px;
+  border-radius: 100px;
+  background-color: $brand-50;
+  color: $black;
+  width: fit-content;
+  @media (max-width: 768px) {
+    margin-left: 48px;
+  }
+}
+.time {
+  font-weight: 400;
+  font-size: 14px;
+
+  color: $brand-300;
+  @media (max-width: 768px) {
+    margin-left: 48px;
+  }
+}
+
+.replies {
+  margin-left: 48px;
+  color: $black;
+  gap: 20px;
+}
+
+.time a {
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  color: $brand-950;
+}
+
+.event-info {
+  position: sticky;
+  top: 20px;
+  box-shadow: 0px 5px 20px 0px $brand-100;
+  padding: 24px 20px;
+  border-radius: 20px;
+  background-color: $white;
+}
+
+.attend-btn {
+  width: 154px;
+  height: 48px;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  background-color: $brand-400;
+  padding: 0px 20px;
+  border: none;
+  border-radius: 100px;
+  &:hover {
+    background-color: $brand-500;
+  }
+  &:active {
+    background-color: $brand-200;
+  }
+  &.disable {
+    background-color: $grey-200;
+  }
+}
+
+.share-btn {
+  width: 154px;
+  height: 48px;
+  font-size: 16px;
+  font-weight: 600;
+  color: $brand-400;
+  background-color: white;
+  padding: 0px 20px;
+  border: 1px solid $brand-400;
+  border-radius: 100px;
+
+  &:hover {
+    color: white;
+    background-color: $brand-500;
+  }
+
+  &:active {
+    color: white;
+    background-color: $brand-200;
+  }
+
+  &.disable {
+    color: $grey-200;
+    background-color: white;
+    border: 1px solid $grey-200;
+  }
+}
+
+.fs-12 {
+  font-size: 12px;
+}
+
+.publish-btn {
+  padding: 8px 20px;
+  border-radius: 100px;
+  background-color: #ff8a20;
+  border: none;
+  color: white;
+  font-weight: 600;
+  align-items: center;
+
+  i {
+    font-size: 24px;
+  }
+}
+
+.drama-info {
+  &__divider {
+    border-bottom: 1px solid #ffca88;
+  }
+
+  &__title-section {
+    border-bottom: 1px solid $brand-300;
+  }
+
+  &__main-image {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  &__map {
+    iframe {
+      border: 0;
+      border-radius: 8px;
+    }
+  }
+
+  &__available-slots {
+    font-weight: 400;
+    width: 154px;
+    font-size: 12px;
+    text-align: center;
+  }
+
+  &__comment-content {
+    border-bottom: 1px solid white;
+  }
+}

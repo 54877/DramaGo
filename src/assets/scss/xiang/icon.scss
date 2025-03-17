@@ -1,0 +1,20 @@
+.nav-icon-1 {
+  filter: invert(35%) sepia(90%) saturate(1300%) hue-rotate(320deg)
+    brightness(40%) contrast(180%);
+}
+
+.nav-icon-2 {
+  filter: invert(59%) sepia(90%) saturate(392%) hue-rotate(342deg)
+    brightness(101%) contrast(103%);
+}
+
+.nav-user {
+  width: 24px;
+  height: 24px;
+  background-image: url("../DramaGo/src/assets/images/icon/24px/solid/ueser.svg");
+  background-color: $brand-core;
+}
+
+.icon {
+  filter: brightness(0) invert(1);
+}

@@ -1,0 +1,31 @@
+
+
+.notFound{
+    background-color: $brand-50;
+
+    .container{
+        height: 100vh;
+    };
+    .wrap{
+        width: 600px;
+        height: 600px;
+        background-image: 
+        linear-gradient(rgba(255, 246, 235, 0.8), rgba(255, 246, 235, 1)),
+        url('./images/Component 2.svg');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        h2 {
+            color: $brand-800;
+            position: relative;
+            z-index: 2;
+        }
+
+        .count{
+            font-size: 120px;
+            font-weight: 900;
+        }
+    }
+
+}

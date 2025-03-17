@@ -1,0 +1,13 @@
+
+.dramaListTab{
+    position: relative;
+    padding: 0px 12px;
+}
+
+.dramaListTab:not(:first-child)::before{
+    content: '｜';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -8px;
+};

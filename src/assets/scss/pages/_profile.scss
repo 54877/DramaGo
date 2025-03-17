@@ -1,0 +1,145 @@
+.profile-container {
+  // background: $brand-50;
+}
+
+.profile {
+  padding: 48px 48px 72px 48px;
+  border-radius: 20px;
+  border: 1px solid $brand-400;
+  height: 100%;
+  .profile-pic-container {
+    .change-btn {
+      width: 40px;
+      height: 40px;
+      bottom: 0;
+      right: 10px;
+      border: 2px solid $brand-400;
+      @include hover-transform(1.1);
+    }
+
+    .profile-pic {
+      object-position: 10% 20%;
+      border: 2px solid $brand-400;
+      aspect-ratio: 1 / 1;
+    }
+  }
+}
+
+.profile-info {
+  text-align: center;
+}
+
+.profile-nav {
+  .nav-link {
+    font-weight: bold;
+    // color: $grey-950;
+    // background-color: #fff;
+    color: $brand-400;
+    padding: 16px 32px 16px 32px;
+    border-radius: 16px;
+    border: 1px solid $brand-400;
+  }
+  .nav-link.active,
+  .nav-link:hover {
+    color: $brand-400;
+    background-color: $brand-100;
+  }
+}
+
+.my-info {
+  padding: 0px 48px 0px 48px;
+  .my-info-section {
+    padding: 32px;
+    border-radius: 20px;
+    border: 1px solid $brand-400;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="date"],
+  input[type="tel"] {
+    min-width: 250px;
+  }
+  .invalid-feedback {
+    position: absolute;
+    left: 103%;
+    top: 50%;
+    transform: translateY(-50%);
+    white-space: nowrap;
+    margin-top: 0;
+    @include rwd-md-max {
+      left: auto;
+      top: auto;
+      transform: none;
+      white-space: normal;
+    }
+  }
+  @include rwd-md-max {
+    padding: 48px 0px 72px 0px;
+  }
+}
+
+.login-method {
+  padding: 48px 48px 0px 48px;
+  .login-method-section {
+    padding: 32px;
+    border-radius: 20px;
+    border: 1px solid $brand-400;
+  }
+  input[type="password"] {
+    max-width: 250px !important;
+  }
+  @include rwd-md-max {
+    padding: 48px 0px 72px 0px;
+  }
+}
+
+.reset-password {
+  padding: 48px 48px 0px 48px;
+  .reset-password-section {
+    padding: 32px;
+    border-radius: 20px;
+    border: 1px solid $brand-400;
+  }
+  input[type="password"] {
+    min-width: 250px;
+  }
+  @include rwd-md-max {
+    padding: 48px 0px 72px 0px;
+  }
+}
+
+.my-records {
+  label {
+    white-space: nowrap;
+  }
+  select {
+    min-width: 200px !important;
+  }
+}
+
+.my-records,
+.my-collections {
+  background-color: #ffffff;
+  padding: 48px 48px 72px 48px;
+  border-radius: 20px;
+  border: 1px solid $brand-400;
+  height: 100%;
+  svg {
+    margin: 6px;
+    // :hover circle {
+    //   fill: $brand-950;
+    // }
+  }
+
+  .date {
+    font-weight: 400;
+    color: $grey-400;
+  }
+  .table th,
+  .table td {
+    overflow: hidden; /* 隱藏溢出的內容 */
+    text-overflow: ellipsis; /* 顯示省略號 */
+    white-space: nowrap; /* 不換行 */
+  }
+}

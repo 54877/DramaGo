@@ -1,0 +1,94 @@
+$brand: #ff8a20;
+$brand-50: #fff6eb;
+$brand-100: #ffe6c6;
+$brand-200: #ffca88;
+$brand-300: #ffa13c;
+$brand-core: #ff8a20;
+$brand-400: #ff8a20;
+$brand-500: #f96307;
+$brand-600: #dd4102;
+$brand-700: #b72706;
+$brand-800: #941d0c;
+$brand-900: #7a1a0d;
+$brand-950: #460902;
+
+$grey-50: #fafafa;
+$grey-200: #dcdcdc;
+$grey-core: #bdbdbd;
+$grey-300: #bdbdbd;
+$grey-400: #989898;
+$grey-500: #7c7c7c;
+$grey-600: #656565;
+$grey-700: #525252;
+$grey-800: #464646;
+$grey-900: #3d3d3d;
+$grey-950: #292929;
+
+$black: #000000;
+$white: #ffffff;
+$danger: #dc3545;
+$success: #198754;
+$waring: #ffc107;
+
+$liner: #ffdcb0;
+$liner-dark: #ffce8f;
+
+$custom-colors: (
+  "brand": $brand,
+  "brand-50": $brand-50,
+  "brand-100": $brand-100,
+  "brand-200": $brand-200,
+  "brand-300": $brand-300,
+  "brand-core": $brand-core,
+  "brand-400": $brand-400,
+  "brand-500": $brand-500,
+  "brand-600": $brand-600,
+  "brand-700": $brand-700,
+  "brand-800": $brand-800,
+  "brand-900": $brand-900,
+  "brand-950": $brand-950,
+
+  "grey-50": $grey-50,
+  "grey-200": $grey-200,
+  "grey-core": $grey-core,
+  "grey-300": $grey-300,
+  "grey-400": $grey-400,
+  "grey-500": $grey-500,
+  "grey-600": $grey-600,
+  "grey-700": $grey-700,
+  "grey-800": $grey-800,
+  "grey-900": $grey-900,
+  "grey-950": $grey-950,
+
+  "black": $black,
+  "white": $white,
+  "danger": $danger,
+  "success": $success,
+  "waring": $waring,
+
+  "liner": $liner,
+  "liner-dark": $liner-dark,
+);
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+@each $color, $value in $custom-colors {
+  .bg-#{$color} {
+    background-color: $value !important;
+  }
+  .btn-#{$color} {
+    background-color: $value !important;
+  }
+  .btn-outline-#{$color} {
+    color: $value !important;
+    border: 1px solid $value !important;
+    background-color: white !important;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: $value !important;
+      color: white !important;
+    }
+  }
+}

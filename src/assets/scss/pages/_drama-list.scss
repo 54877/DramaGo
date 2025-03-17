@@ -1,0 +1,64 @@
+.dramaList{
+    .breadcrumb{
+        @include rwd-lg-max {
+            display: none;
+        }
+    }
+
+    .swal-title-color{
+        color: red;
+    }
+
+    .addDrama-bg{
+        height: 115px;
+        background-image: url(./images/inner/Frame%201000005422.svg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .createDramaBtn{
+        &:hover{
+            text-shadow: 0 0 10px rgba($color: #ffffff, $alpha: .7);
+        }
+    }
+
+    .sortBoard{
+        @include rwd-lg-max {
+            display: none;
+        }
+    }
+
+    .nav-enable .nav-link{
+        &.active{
+            color:#460902 ;
+            font-weight: 600;
+        }
+    }
+    
+    .badge-group{
+        margin-top: 24px;
+    }
+
+    .badge{
+        border-radius: 0;
+    }
+    .avatar{
+        width: 40px;
+        height: 40px;
+    }
+
+    .img-scale:hover{
+        transform: scale(1.1);
+        transition: 1s;
+    }
+
+    .offcanvas.offcanvas-filter{
+        height: 85vh;
+    }
+
+    .offcanvas.offcanvas-sort {
+        height: 75vh;
+    }
+    
+}

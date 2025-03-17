@@ -1,0 +1,23 @@
+@mixin rwd-lg-max {
+    @media (max-width:992px) {
+        @content;
+    }
+}
+
+@mixin rwd-md-max {
+    @media (max-width:768px) {
+        @content;
+    }
+}
+
+@mixin rwd-sm-max {
+    @media (max-width:576px) {
+        @content;
+    }
+}
+
+@mixin hover-transform($scale) {
+    &:hover {
+        transform: scale($scale);
+    }
+}

@@ -1,0 +1,12 @@
+.header{
+
+    .navLink{
+        border-bottom: 2px solid transparent;
+        transition: border .8s;
+
+        &:hover{
+            border-bottom: 2px solid $brand-core;
+        }
+    }
+
+}

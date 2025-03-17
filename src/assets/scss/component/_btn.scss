@@ -1,0 +1,184 @@
+// 按鈕
+.brandBtn-1-lg{
+    font-size:14px;
+    font-weight: 600;
+    color: white;
+    background-color: $brand-400;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 100px;
+    &:hover {
+        background-color: $brand-500;
+    }
+    &:active{
+        background-color: $brand-200;
+    }
+    &.disable{
+        background-color: $grey-200;
+    }
+}
+.brandBtn-1 {
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    background-color: $brand-400;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 100px;
+    &:hover {
+        background-color: $brand-500;
+    }
+
+    &:active {
+        background-color: $brand-200;
+    }
+
+    &.disable {
+        background-color: $grey-200;
+    }
+}
+.brandBtn-1-sm {
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    background-color: $brand-400;
+    padding: 5.5px 20px;
+    border: none;
+    border-radius: 100px;
+    &:hover {
+        background-color: $brand-500;
+    }
+
+    &:active {
+        background-color: $brand-200;
+    }
+
+    &.active {
+        background-color: $brand-200;
+    }
+
+    &.disable {
+        background-color: $grey-200;
+    }
+}
+
+.brandBtn-2-lg {
+    font-size: 14px;
+    font-weight: 600;
+    color: $brand-400;
+    background-color: white;
+    padding: 12px 20px;
+    border: 1px solid $brand-400;
+    border-radius: 100px;
+
+    &:hover {
+        color: white;
+        background-color: $brand-500;
+    }
+
+    &:active {
+        color: white;
+        background-color: $brand-200;
+    }
+
+    &.disable {
+        color:$grey-200;
+        background-color: white;
+        border: 1px solid $grey-200;
+    }
+}
+.brandBtn-2 {
+    font-size: 14px;
+    font-weight: 600;
+    color: $brand-400;
+    background-color: white;
+    padding: 8px 20px;
+    border: 1px solid $brand-400;
+    border-radius: 100px;
+
+    &:hover {
+        color: white;
+        background-color: $brand-500;
+    }
+
+    &:active {
+        color: white;
+        background-color: $brand-200;
+    }
+
+    &.disable {
+        color: $grey-200;
+        background-color: white;
+        border: 1px solid $grey-200;
+    }
+}
+.brandBtn-2-sm {
+    font-size: 14px;
+    font-weight: 600;
+    color: $brand-400;
+    background-color: white;
+    padding: 5.5px 20px;
+    border: 1px solid $brand-400;
+    border-radius: 100px;
+
+    &:hover {
+        background-color: $brand-100;
+    }
+
+
+    &.active {
+        background-color: $brand-100;
+    }
+
+    &.disable {
+        color: $grey-200;
+        background-color: white;
+        border: 1px solid $grey-200;
+    }
+}
+
+.brandBtn-3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: $brand-400;
+    background-color: white;
+    padding: 6px 14px;
+    border: 1px solid $brand-400;
+    border-radius: 100px;
+
+    &:active {
+        color: $brand-400;
+        background-color: $brand-100;
+    }
+
+    &.active {
+        background-color: $brand-100;
+    }
+
+    &.disable {
+        color: $grey-200;
+        background-color: white;
+        border: 1px solid $grey-200;
+    }
+}
+
+.brandBtn-4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: $brand-400;
+    background-color: $brand-100;
+    padding: 6px 14px;
+    border: none;
+    border-radius: 100px;
+
+    &:hover {
+        color: $brand-100;
+        background-color: $brand-400;
+    }
+
+    &.disable {
+        color: $grey-200;
+        background-color: white;
+        border: 1px solid $grey-200;
+    }
+}

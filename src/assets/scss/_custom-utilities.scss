@@ -1,0 +1,33 @@
+$utilities: map-merge(
+  $utilities,
+  (
+    "font-size":
+      map-merge(
+        map-get($utilities, "font-size"),
+        (
+          responsive: true,
+        )
+      ),
+    "text-color": (
+      property: color,
+      class: text,
+      values: $theme-colors,
+      responsive: true,
+      // 字體顏色響應式
+    ),
+    "link-color": (
+      property: color,
+      class: link,
+      values: $theme-colors,
+      responsive: true,
+    ),
+    // border-radius
+    "rounded":
+      (
+        property: border-radius,
+        class: rounded,
+        values: $spacers,
+        responsive: true,
+      ),
+  )
+);
