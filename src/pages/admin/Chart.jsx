@@ -141,7 +141,7 @@ const MyChart = ({ legendPosi, plugin, day, isWidth, isFinish }) => {
     );
 };
 
-const BarChartComponent = ({ category, optiontag}) => {
+const BarChartComponent = ({ category, optiontag }) => {
     const [tagdata, setTagData] = useState([])
 
     useEffect(() => {
@@ -466,10 +466,10 @@ const ChartOutlet = () => {
     }, [product])
 
 
-    useEffect(()=>{
+    useEffect(() => {
         if (optiontag.length == 0) setTagState(false)
-            else setTagState(true)
-    },[optiontag])
+        else setTagState(true)
+    }, [optiontag])
 
     return (<>
         {isWidth &&
