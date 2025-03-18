@@ -97,7 +97,7 @@ const DramaList = () => {
       setDramas(res.data.products);
       setFilterDramas(res.data.products);
     } catch (err) {
-      const message = err.response?.data;
+      let message = err.response?.data;
       message = Array.isArray(message) ? message : [message];
       dispatch(
         pushMsg({
@@ -117,7 +117,7 @@ const DramaList = () => {
       setMembers(res.data.articles);
     } catch (err) {
       console.log(err);
-      const message = err.response?.data;
+      let message = err.response?.data;
       message = Array.isArray(message) ? message : [message];
       dispatch(
         pushMsg({

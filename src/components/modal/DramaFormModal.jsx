@@ -200,7 +200,7 @@ const DramaFormModal = ({ dramaFormRef, closeDramaForm, deleteDrama, modalMode, 
                 setImagesUrl([]);
                 closeDramaForm();
             } catch (err) {
-                const message = err.response.data;
+                let message = err.response.data;
                 message = Array.isArray(message) ? message : [message]
                 dispatch(pushMsg({
                     text: message.join('、'),
@@ -220,7 +220,7 @@ const DramaFormModal = ({ dramaFormRef, closeDramaForm, deleteDrama, modalMode, 
                 getDramas();
                 closeDramaForm();
             } catch (err) {
-                const message = err.response.data;
+                let message = err.response.data;
                 message = Array.isArray(message) ? message : [message]
                 dispatch(pushMsg({
                     text: message.join('、'),

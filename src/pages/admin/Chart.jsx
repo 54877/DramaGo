@@ -10,13 +10,6 @@ import axios from 'axios';
 const baseUrl = import.meta.env.VITE_APP_BASE_URL;
 const apiPath = import.meta.env.VITE_APP_API_PATH;
 
-//取API值， 依照需要加入各data
-
-// tag : tag
-// lable : [數量]
-// 標籤為選隱藏chart 主元件建立個元件data並判斷是否有值 有 = display-block 否 = display-none
-// 會員管理頁面 有X軸
-
 const MyChart = ({ legendPosi, plugin, day, isWidth, isFinish }) => {
     const canvasRef = useRef(null);
     const chartRef = useRef(null);
@@ -148,112 +141,28 @@ const MyChart = ({ legendPosi, plugin, day, isWidth, isFinish }) => {
     );
 };
 
-//線條
-// const MyChartLine = ({ legendPosi, plugin, day, isWidth }) => {
-//     const canvasRef = useRef(null);
-//     const chartRef = useRef(null);
-//     const data = [
-//         {
-//             label: "1",  // 標籤
-//             data: [10, 20, 30],  //標籤數據(Y軸資料)
-//             backgroundColor: 'rgba(75, 192, 192, 0.5)',
-//             borderColor: '#66AEDA',
-//         },
-//         {
-//             label: "2",
-//             data: [15, 25, 10],
-//             backgroundColor: '#F96307',
-//             borderColor: '#9BD579',
-//         },
-//         {
-//             label: "3",
-//             data: [15, 25, 10],
-//             backgroundColor: 'rgba(255, 99, 132, 0.5)',
-//             borderColor: 'rgba(255, 99, 132, 1)',
-//         }
-//     ];
+const BarChartComponent = ({ category, optiontag}) => {
+    const [tagdata, setTagData] = useState([])
 
-//     //chart
-//     // 創建或更新圖表
-//     useEffect(() => {
-//         const ctx = canvasRef.current.getContext('2d');
+    useEffect(() => {
+        let a;
+        let data = [];
+        optiontag.map(e => {
+            a = category.filter((b) => {
+                return b[0] == e.value
+            })
+            data.push(a)
+        })
+        setTagData(data.flatMap(e => e))
+        console.log(optiontag.length)
+    }, [optiontag])
 
-//         // 創建新的圖表
-//         chartRef.current = new Chart(ctx, {
-//             type: 'line',
-//             data: {
-//                 labels: day,
-//                 datasets: data,
-//             },
-//             options: {
-//                 responsive: true,
-//                 maintainAspectRatio: false,
-//                 scales: {
-//                     y: {
-//                         beginAtZero: true,
-//                         ticks: {
-//                             font: {
-//                                 size: isWidth ? 12 : 14,
-//                             },
-//                             stepSize: 2,
-//                         },
-//                     },
-//                     x: {
-//                         type: 'time',
-//                         time: {
-//                             unit: 'day',
-//                             displayFormats: {
-//                                 day: 'M/d',
-//                             },
-//                         },
-//                         ticks: {
-//                             font: {
-//                                 size: isWidth ? 12 : 14,
-//                             },
-//                         },
-//                     },
-//                 },
-//                 plugins: {
-//                     legend: {
-//                         display: false,
-//                     },
-//                 },
-//                 layout: {
-//                     padding: {
-//                         top: isWidth ? 40 : 100,
-//                         right: isWidth ? 16 : 160,
-//                         left: isWidth ? 16 : 48,
-//                         bottom: isWidth ? 40 : 40,
-//                     },
-//                 },
-//             },
-//             plugins: [legendPosi, plugin],
-//         });
 
-//         return () => {
-//             if (chartRef.current) {
-//                 chartRef.current.destroy();
-//             }
-//         };
-//     }, [day, isWidth])
-
-//     return (
-//         <canvas ref={canvasRef}></canvas>
-//     );
-// };
-
-//派
-
-const BarChartComponent = () => {
     useEffect(() => {
         c3.generate({
             bindto: '#chart',
             data: {
-                columns: [
-                    ['美劇', 20],
-                    ['韓劇', 30],
-                    ['日劇', 50],
-                ],
+                columns: tagdata,
                 type: 'pie',
             },
             pie: {
@@ -268,7 +177,7 @@ const BarChartComponent = () => {
                 show: false,
             },
         });
-    }, []);
+    }, [tagdata]);
 
     return <div className='my-lg-19x my-4' id="chart"></div>
 
@@ -386,8 +295,9 @@ const ChartOutlet = () => {
     const [isFinish, setIsFinsh] = useState({})
     const [category, setCategory] = useState([])
     const [product, setProduct] = useState([])
-    const [dayState, setDayState] = useState(false) //day狀態
-    const [isFinishState, setIsFinshState] = useState(false)  // isFinsh 狀態
+    const [dayState, setDayState] = useState(false)
+    const [isFinishState, setIsFinshState] = useState(false)
+    const [tagState, setTagState] = useState(false)
     useEffect(() => {
         const handleResize = () => {
             setIsWidth(window.innerWidth <= 992);
@@ -543,6 +453,24 @@ const ChartOutlet = () => {
         else setIsFinshState(false)
     }, [selectedOptions]);
 
+    //tag標籤取得
+    useEffect(() => {
+        const b = {}
+        product.map((e) => {
+            if (b[e.category]) {
+                b[e.category] = b[e.category] + 1
+            } else
+                b[e.category] = 1
+        })
+        setCategory(Object.entries(b))
+    }, [product])
+
+
+    useEffect(()=>{
+        if (optiontag.length == 0) setTagState(false)
+            else setTagState(true)
+    },[optiontag])
+
     return (<>
         {isWidth &&
             <div className='d-flex justify-content-end'>
@@ -570,16 +498,15 @@ const ChartOutlet = () => {
                                 placeholder="結束時間" />
                         </div>
                     </div>
-
+                    <div className="col-4 d-flex flex-nowrap align-items-center">
+                        <span style={{ whiteSpace: `nowrap` }} className="me-4  fs-b1 fw-semibold">出團情況</span>
+                        <Option setSelectedOptions={setSelectedOptions} selectedOptions={selectedOptions} />
+                    </div>
                     <div className="col-4 d-flex flex-nowrap align-items-center">
                         <span style={{ whiteSpace: `nowrap` }} className="me-4  fs-b1 fw-semibold">標籤</span>
                         <OptionTag optiontag={optiontag} setOptionTag={setOptionTag} />
                     </div>
 
-                    <div className="col-4 d-flex flex-nowrap align-items-center">
-                        <span style={{ whiteSpace: `nowrap` }} className="me-4  fs-b1 fw-semibold">出團情況</span>
-                        <Option setSelectedOptions={setSelectedOptions} selectedOptions={selectedOptions} />
-                    </div>
                 </form >
             </>}
 
@@ -631,9 +558,13 @@ const ChartOutlet = () => {
         {/* <div style={{ width: '100%', height: isWidth ? '300px' : '480px' }} className='shadow border rounded-4 mb-lg-6 mb-5'>
             <MyChartLine legendPosi={legendPosi} plugin={plugin} day={day} isWidth={isWidth} />
         </div> */}
-        <div className='shadow border rounded-4'>
-            <BarChartComponent />
-        </div>
+        {tagState &&
+            <>
+                <div className='shadow border rounded-4'>
+                    <BarChartComponent category={category} optiontag={optiontag} />
+                </div>
+            </>
+        }
     </>)
 };
 

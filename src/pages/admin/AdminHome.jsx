@@ -15,28 +15,28 @@ const AdminHome = () => {
                     {/* 桌機版 */}
                     <ul className="d-none d-lg-block">
                         <li className={/^\/adminSystem\/?$/.test(location.pathname) ? "bg-brand-100 rounded-bottom rounded-5" : ""}>
-                            <Link className="fs-b1 text-brand-950 fw-semibold d-flex justify-content-center align-items-center py-5"
+                            <Link className="fs-d text-brand-950 fw-semibold d-flex justify-content-center align-items-center py-5"
                                 to="./">
                                 <img className="pe-3" src={theaters} alt="" />
                                 劇會管理
                             </Link>
                         </li>
                         <li className= {location.pathname == "/adminSystem/member-manage" ? "bg-brand-100" : ""}>
-                            <Link className="fs-b1 text-brand-950 fw-semibold d-flex justify-content-center align-items-center py-5"
+                            <Link className="fs-d text-brand-950 fw-semibold d-flex justify-content-center align-items-center py-5"
                                 to="./member-manage">
                                 <i className="bi bi-people-fill pe-5 text-brand-core"></i>
                                 會員管理
                             </Link>
                         </li>
                         <li className= {location.pathname == "/adminSystem/tag-manage" ? "bg-brand-100" : ""}>
-                            <Link className="fs-b1 text-brand-950 fw-semibold d-flex justify-content-center align-items-center py-5"
+                            <Link className="fs-d text-brand-950 fw-semibold d-flex justify-content-center align-items-center py-5"
                                 to="./tag-manage">
                                 <img className="pe-3" src={sell} alt="" />
                                 標籤管理
                             </Link>
                         </li>
                         <li className={location.pathname == "/adminSystem/chart" ? "bg-brand-100" : ""}>
-                            <Link className="fs-b1 text-brand-950 fw-semibold d-flex justify-content-center align-items-center  py-5"
+                            <Link className="fs-d text-brand-950 fw-semibold d-flex justify-content-center align-items-center  py-5"
                                 to="./chart">
                                 <img className="pe-3" src={chart} alt="" />
                                 統計數據
@@ -45,37 +45,26 @@ const AdminHome = () => {
                     </ul>
                     {/* 手機版 */}
                     <ul className="d-lg-none d-flex justify-content-between">
-                        <li className={/^\/adminSystem\/?$/.test(location.pathname) ? "bg-brand-100  rounded-4 px-3" : ""}>
-                            <Link className="fs-b1 text-brand-950 fw-semibold d-flex justify-content-center align-items-center py-4"
-                                to="./">
-                                <img className="pe-3" src={theaters} alt="" />
-                                劇會管理頁面
-                            </Link>
-                        </li>
-                    </ul>
-
-                    <ul className="d-lg-none d-flex justify-content-between">
-                        <li className= {location.pathname == "/adminSystem/tag-manage" ? "bg-brand-100 rounded-4 px-5" : ""}>
-                            <Link className="fs-b1 text-brand-950 fw-semibold d-flex justify-content-center align-items-center  py-4"
+                        <li className= {location.pathname == "/adminSystem/member-manage" ? "bg-brand-100 rounded-4 px-5" : ""}>
+                            <Link className="fs-f text-brand-950 fw-semibold d-flex justify-content-center align-items-center  py-4"
                                 to="./member-manage">
-                                <i className="bi bi-people-fill pe-5 text-brand-core"></i>
                                 會員管理
                             </Link>
                         </li>
                         <li className= {location.pathname == "/adminSystem/tag-manage" ? "bg-brand-100 rounded-4 px-3" : ""}>
-                            <Link className="fs-b1 text-brand-950 fw-semibold d-flex justify-content-center align-items-center py-4"
+                            <Link className="fs-f text-brand-950 fw-semibold d-flex justify-content-center align-items-center py-4"
                                 to="./tag-manage">
                                 標籤管理
                             </Link>
                         </li>
                         <li className={location.pathname == "/adminSystem/chart" ? "bg-brand-100 rounded-4 px-5" : ""}>
-                            <Link className="fs-b1 text-brand-950 fw-semibold d-flex justify-content-center align-items-center  py-4"
+                            <Link className="fs-f text-brand-950 fw-semibold d-flex justify-content-center align-items-center  py-4"
                                 to="./chart">
                                 統計數據
                             </Link>
                         </li>
                         <li className={/^\/adminSystem\/?$/.test(location.pathname) ? "bg-brand-100  rounded-4 px-5" : ""}>
-                            <Link className="fs-b1 text-brand-950 fw-semibold d-flex justify-content-center align-items-center py-4"
+                            <Link className="fs-f text-brand-950 fw-semibold d-flex justify-content-center align-items-center py-4"
                                 to="./">
                                 劇會管理頁面
                             </Link>

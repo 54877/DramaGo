@@ -29,8 +29,8 @@ import { Link, useOutletContext } from 'react-router-dom';
 
 // 串接Google 登入 API 文件
 // 串接Facebook 登入 API 文件
-
-// 後台所有功能
+// 照片 聚會API功能異常
+// 會員管理頁面 有X軸
 
 
 const baseUrl = import.meta.env.VITE_APP_BASE_URL;
@@ -137,7 +137,7 @@ const Card = () => {
       setMembers(res.data.articles);
     } catch (err) {
       console.log(err);
-      const message = err.response?.data;
+      let message = err.response?.data;
       message = Array.isArray(message) ? message : [message];
       dispatch(
         pushMsg({

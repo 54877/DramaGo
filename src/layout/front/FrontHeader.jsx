@@ -16,7 +16,6 @@ const apiPath = import.meta.env.VITE_APP_API_PATH;
 const FrontHeader = ({ state, setState, mymodal, setDramas }) => {
     const [filterDramas, setFilterDramas] = useState(null);
     const navigate = useNavigate();
-    const [cccc , setText] =useState(false)
     // 渲染劇會列表
     useEffect(() => {
         (async () => {
@@ -51,17 +50,13 @@ const FrontHeader = ({ state, setState, mymodal, setDramas }) => {
         }
     }, [])
 
-    const text = ()=>{
-        setText(true)
-    }
-
     return (<>
         <header className="header">
             {/* 手機板nav */}
             <div className="w-100 d-lg-none">
                 <nav className="navbar">
                     <Link className="ms-3 navbar-brand" to="/"><img style={{ width: "140px" }} src={logo} alt="" /></Link>
-                    <button className="navbar-toggler border-0 me-3" type="button" id="navbarDropdown" role="button" data-bs-toggle="dropdown"  aria-expanded="false">
+                    <button className="navbar-toggler border-0 me-3" type="button" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <img className="nav-icon-1" src={menber} alt="" />
                     </button>
                     <div className=" dropdown-menu w-100 py-0" aria-labelledby="navbarDropdown">
